@@ -6,5 +6,7 @@
     <mapping directory="$PROJECT_DIR$/Server/BuildTools/Bukkit" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Server/BuildTools/CraftBukkit" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Server/BuildTools/Spigot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Server/BuildTools/Spigot/Spigot-API" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Server/BuildTools/Spigot/Spigot-Server" vcs="Git" />
   </component>
 </project>
