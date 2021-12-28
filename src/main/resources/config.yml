@@ -36,7 +36,7 @@ messages:
     SellTD: Sell !items for !price? (accepting damaged items at a reduced price, ignoring NBT)
   transaction:
     SellAny: You have sold !items for !price!
-    SellAnyDamag: You have sold !items for !price!
+    SellAnyDam: You have sold !items for !price!
     SellAnyType: You have sold !items for !price!
     SellAnyTD: You have sold !items for !price!
 
@@ -45,7 +45,7 @@ messages:
     SellTD: You have sold !items for !price!
   transaction_owner:
     SellAny: \!customer sold you !items for !price!
-    SellAnyDamag: \!customer sold you !items for !price!
+    SellAnyDam: \!customer sold you !items for !price!
     SellAnyType: \!customer sold you !items for !price!
     SellAnyTD: \!customer sold you !items for !price!
 
@@ -54,7 +54,7 @@ messages:
     SellTD: \!customer sold you !items for !price!
   help:
     SellAny: The SellAny sign exchanges any one of the customer's items for the owner's money. The 2nd and 3rd lines of this sign can say whatever you like, the price goes on the 4th.  Punch the chest(s) using !linkmaterial containing the type and amount of items you want for a single transaction.
-    SellAnyDamag: The SellAny sign exchanges any one of the customer's items for the owner's money (damaged items for a lower price). The 2nd and 3rd lines of this sign can say whatever you like, the price goes on the 4th.  Punch the chest(s) using !linkmaterial containing the type and amount of items you want for a single transaction.
+    SellAnyDam: The SellAny sign exchanges any one of the customer's items for the owner's money (damaged items for a lower price). The 2nd and 3rd lines of this sign can say whatever you like, the price goes on the 4th.  Punch the chest(s) using !linkmaterial containing the type and amount of items you want for a single transaction.
     SellAnyType: The SellAny sign exchanges any one of the customer's items for the owner's money (ignoring nbt). The 2nd and 3rd lines of this sign can say whatever you like, the price goes on the 4th.  Punch the chest(s) using !linkmaterial containing the type and amount of items you want for a single transaction.
     SellAnyTD: The SellAny sign exchanges any one of the customer's items for the owner's money (damaged items for a lower price, ignoring nbt). The 2nd and 3rd lines of this sign can say whatever you like, the price goes on the 4th.  Punch the chest(s) using !linkmaterial containing the type and amount of items you want for a single transaction.
 

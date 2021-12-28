@@ -1,0 +1,1 @@
+mvn org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=C:\Users\lordm\Downloads\SignShop-3.6.1.jar -DgroupId=org.wargamer2010 -Dsources=C:\Users\lordm\Downloads\SignShop-3.6.1.zip
