@@ -1,6 +1,6 @@
-  name: SignShopMysteryBox
-  main: org.makershaven.signshopmysterybox.SignShopMysteryBox
+  name: SignShopCustomSell
+  main: net.mcmerdith.signshopcustomsell.SignShopCustomSell
   api-version: "1.13"
   version: "${project.version}"
   depend: [SignShop]
-  authors: [Wargamer2010, Devinish, Weaves]
+  authors: [mcmerdith]

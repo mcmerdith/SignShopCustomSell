@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>SignShopMysteryBox</artifactId>
+    <groupId>net.mcmerdith</groupId>
+    <artifactId>SignShopCustomSell</artifactId>
     <version>0.1.1-ALPHA</version>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -42,7 +42,7 @@
         <dependency>
             <groupId>org.wargamer2010</groupId>
             <artifactId>SignShop</artifactId>
-            <version>3.4.5</version>
+            <version>3.6.1</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -50,6 +50,13 @@
             <artifactId>bstats-bukkit</artifactId>
             <version>1.7</version>
             <scope>compile</scope>
+        </dependency>
+        <!-- Lombok for hashing -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
     <build>
@@ -61,9 +68,10 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Built-By>Weaves</Built-By>
+                            <Built-By>mcmerdith</Built-By>
                         </manifestEntries>
                     </archive>
+                    <outputDirectory>Server/plugins</outputDirectory>
                 </configuration>
             </plugin>
             <plugin>
@@ -76,7 +84,7 @@
                         <relocation>
                             <pattern>org.bstats.bukkit</pattern>
                             <!-- Replace this with your package! -->
-                            <shadedPattern>org.makershaven.weaves</shadedPattern>
+                            <shadedPattern>net.mcmerdith</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>

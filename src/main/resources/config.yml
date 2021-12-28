@@ -1,25 +1,65 @@
 signs:
-  MysteryBox: givePlayerItemsFromMysteryBox,takePlayerMoney,giveOwnerMoney
-  IMysteryBox: givePlayerItemsFromMysteryBox{infinite},takePlayerMoney,playerIsOp
-  MysteryBoxXP: givePlayerItemsFromMysteryBox{infinite},takePlayerXP,playerIsOp
+#  Sell any one of the items specified in the chest
+  SellAny: takeCustomVariablePlayerItems{any},takeOwnerMoney,giveShopItems,givePlayerMoney
+#  Sell any one of the items specified in the chest (accepting damaged)
+  SellAnyDam: takeCustomVariablePlayerItems{any,acceptdamaged},takeOwnerMoney,giveShopItems,givePlayerMoney
+#  Sell any one of the items specified in the chest (ignoring nbt)
+  SellAnyType: takeCustomVariablePlayerItems{any,nonbt},takeOwnerMoney,giveShopItems,givePlayerMoney
+#  Sell any one of the items specified in the chest (ignoring damage and nbt)
+  SellAnyTD: takeCustomVariablePlayerItems{any,acceptdamaged,nonbt},takeOwnerMoney,giveShopItems,givePlayerMoney
+
+#  Sell the items specified in the chest (accepting damaged)
+  SellDamaged: takeCustomVariablePlayerItems{acceptdamaged},takeOwnerMoney,giveShopItems,givePlayerMoney
+#  Sell the items specified in the chest (ignoring nbt)
+  SellType: takeCustomVariablePlayerItems{nonbt},takeOwnerMoney,giveShopItems,givePlayerMoney
+#  Sell the items specified in the chest (ignoring damage and nbt)
+  SellTD: takeCustomVariablePlayerItems{acceptdamaged,nonbt},takeOwnerMoney,giveShopItems,givePlayerMoney
+
 messages:
   setup:
-    MysteryBox: You have created a MysteryBox sign that costs !price to buy !amount item(s)!
-    IMysteryBox: You have created a MysteryBox sign that costs !price to buy !amount item(s)!
-    MysteryBoxXP: You have created a MysteryBox sign that costs !xp levels to buy !amount item(s)!
+    SellAny: You have put a bounty of !price for any one of !items!
+    SellAnyDam: You have put a bounty of !price for any of !items! (accepting damaged items at a reduced price)
+    SellAnyType: You have put a bounty of !price for any of !items! (ignoring NBT)
+    SellAnyTD: You have put a bounty of !price for any of !items! (accepting damaged items at a reduced price, ignoring NBT)
+
+    SellDamaged: You have put a bounty of !price for !items! (accepting damaged items at a reduced price)
+    SellType: You have put a bounty of !price for !items! (ignoring NBT)
+    SellTD: You have put a bounty of !price for !items! (accepting damaged items at a reduced price, ignoring NBT)
   confirm:
-    MysteryBox: Pay !price for !amount mystery item(s)?
-    IMysteryBox: Pay !price for !amount mystery item(s)?
-    MysteryBoxXP: Pay !xp levels for !amount mystery item(s)?
+    SellAny: Sell one of !items for !price?
+    SellAnyDam: Sell one of !items for !price? (accepting damaged items at a reduced price)
+    SellAnyType: Sell one of !items for !price? (ignoring NBT)
+    SellAnyTD: Sell one of !items for !price? (accepting damaged items at a reduced price, ignoring NBT)
+
+    SellDamaged: Sell !items for !price? (accepting damaged items at a reduced price)
+    SellType: Sell !items for !price? (ignoring NBT)
+    SellTD: Sell !items for !price? (accepting damaged items at a reduced price, ignoring NBT)
   transaction:
-    MysteryBox: You paid !price for !amount mystery item(s) consisting of the following item(s); !items!
-    IMysteryBox: You paid !price for !amount mystery item(s) consisting of the following item(s); !items!
-    MysteryBoxXP: You paid !xp levels for !amount mystery item(s) consisting of the following item(s); !items!
+    SellAny: You have sold !items for !price!
+    SellAnyDamag: You have sold !items for !price!
+    SellAnyType: You have sold !items for !price!
+    SellAnyTD: You have sold !items for !price!
+
+    SellDamaged: You have sold !items for !price!
+    SellType: You have sold !items for !price!
+    SellTD: You have sold !items for !price!
   transaction_owner:
-    MysteryBox: \!customer bought !amount mystery item(s) for !price, consisting of the following item(s); !items.
-    IMysteryBox: ''
-    MysteryBoxXP: ''
+    SellAny: \!customer sold you !items for !price!
+    SellAnyDamag: \!customer sold you !items for !price!
+    SellAnyType: \!customer sold you !items for !price!
+    SellAnyTD: \!customer sold you !items for !price!
+
+    SellDamaged: \!customer sold you !items for !price!
+    SellType: \!customer sold you !items for !price!
+    SellTD: \!customer sold you !items for !price!
   help:
-    MysteryBox: The MysteryBox sign exchanges the customer's money for 1 or more random mystery item(s). The 2nd line is the number of mystery items they will get. The 3rd line can say whatever you like, and the price goes on the 4th. Punch the chest(s) with the !linkmaterial then the sign. The shop will continue to work as long as there are enough items to give.
-    IMysteryBox: The IMysteryBox sign exchanges the customer's money for 1 or more random mystery item(s) an infinate number of times. The 2nd line is the number of mystery items they will get. The 3rd line can say whatever you like, and the price goes on the 4th. Punch the chest(s) with the !linkmaterial then the sign.
-    MysteryBoxXP: The MysteryBoxXP sign exchanges the customer's XP for 1 or more random mystery item(s). The 2nd line is the number of mystery items they will get. The 3rd line is the cost in XP, and the 4th can say whatever you like. Punch the chest(s) with the !linkmaterial then the sign. The shop will continue to work as long as there are enough items to give.
+    SellAny: The SellAny sign exchanges any one of the customer's items for the owner's money. The 2nd and 3rd lines of this sign can say whatever you like, the price goes on the 4th.  Punch the chest(s) using !linkmaterial containing the type and amount of items you want for a single transaction.
+    SellAnyDamag: The SellAny sign exchanges any one of the customer's items for the owner's money (damaged items for a lower price). The 2nd and 3rd lines of this sign can say whatever you like, the price goes on the 4th.  Punch the chest(s) using !linkmaterial containing the type and amount of items you want for a single transaction.
+    SellAnyType: The SellAny sign exchanges any one of the customer's items for the owner's money (ignoring nbt). The 2nd and 3rd lines of this sign can say whatever you like, the price goes on the 4th.  Punch the chest(s) using !linkmaterial containing the type and amount of items you want for a single transaction.
+    SellAnyTD: The SellAny sign exchanges any one of the customer's items for the owner's money (damaged items for a lower price, ignoring nbt). The 2nd and 3rd lines of this sign can say whatever you like, the price goes on the 4th.  Punch the chest(s) using !linkmaterial containing the type and amount of items you want for a single transaction.
+
+    SellDamaged: The SellAny sign exchanges the customer's items for the owner's money (damaged items for a lower price). The 2nd and 3rd lines of this sign can say whatever you like, the price goes on the 4th.  Punch the chest(s) using !linkmaterial containing the type and amount of items you want for a single transaction.
+    SellType: The SellAny sign exchanges the customer's items for the owner's money (ignoring nbt). The 2nd and 3rd lines of this sign can say whatever you like, the price goes on the 4th.  Punch the chest(s) using !linkmaterial containing the type and amount of items you want for a single transaction.
+    SellTD: The SellAny sign exchanges the customer's items for the owner's money (damaged items for a lower price, ignoring nbt). The 2nd and 3rd lines of this sign can say whatever you like, the price goes on the 4th.  Punch the chest(s) using !linkmaterial containing the type and amount of items you want for a single transaction.
+
+errors:
